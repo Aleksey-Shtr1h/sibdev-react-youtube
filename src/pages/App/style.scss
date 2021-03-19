@@ -1,0 +1,135 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.auth-input-focus:focus {
+  border: 1px solid #1390e5;
+  background: rgba(197, 228, 249, 0.3);
+}
+
+.header-link-before {
+  &:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: #1390e5;
+  }
+}
+
+.visibleEyeBox {
+  position: absolute;
+  top: 40%;
+  left: 100%;
+
+  z-index: 10;
+}
+
+.visibleEyeBox-checkbox + .visibleEyeBox-label::after {
+  content: "";
+  position: absolute;
+  left: -35px;
+  top: 0;
+
+  width: 26px;
+  height: 26px;
+
+  background-image: url("../../assets/img/eye-off.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 1;
+
+  cursor: pointer;
+}
+
+.visibleEyeBox-checkbox + .visibleEyeBox-label:hover::after {
+  opacity: 1;
+}
+
+.visibleEyeBox-checkbox + .visibleEyeBox-label::after {
+  opacity: 1;
+}
+
+.visibleEyeBox-checkbox:checked + .visibleEyeBox-label::after {
+  content: "";
+  position: absolute;
+  left: -35px;
+  top: 0;
+
+  width: 26px;
+  height: 26px;
+
+  background-image: url("../../assets/img/eye.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 1;
+
+  cursor: pointer;
+}
+
+.visibleEyeBox-checkbox:checked + .visibleEyeBox-label:hover::after {
+  opacity: 1;
+}
+
+.visibleEyeBox-checkbox:disabled + .visibleEyeBox-label::after {
+  opacity: 1;
+}
+
+.visibleEyeBox-checkbox:disabled + .visibleEyeBox-label:hover::after {
+  opacity: 1;
+}
+
+.favorite-item:hover .favorite-box-btn {
+  display: flex;
+}
