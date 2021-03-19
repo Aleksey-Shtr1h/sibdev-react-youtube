@@ -9,3 +9,11 @@ export const getSearchValuesSelector = (state) => {
 export const getInputValueSelector = (state) => {
   return state.DATA.inputValue;
 };
+
+export const getStateModalEditSelector = (state) => {
+  return state.DATA.isModalEdit;
+};
+
+export const getDataItemFavoriteSelector = (state) => {
+  return state.DATA.dataItemFaforite;
+};

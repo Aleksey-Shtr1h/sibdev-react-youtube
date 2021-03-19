@@ -1,5 +1,4 @@
 import { ActionTypeUser, ActionCreatorUser } from "./userAction.js";
-// import { ActionCreatorApp } from "../app/appAction.js";
 import authUsersJson from '../../JSON/auth-users.json'
 
 export const initialState = {

@@ -13,11 +13,17 @@ export const FavoriteItem = ({ searchValue }) => {
   const searchValues = useSelector((state) => getSearchValuesSelector(state));
   const dispatch = useDispatch();
 
-  const { value, id } = searchValue;
+  const { value, id, discription } = searchValue;
 
   const classes = useFavoriteItemStyles();
+
   return (
-    <li className={`favorite-item ${classes.favoriteItem}`}>
+    <li
+      className={`favorite-item ${classes.favoriteItem}`}
+      onMouseEnter={() =>
+        dispatch(ActionCreatorData.getDataItemFavorite(searchValue))
+      }
+    >
       <Link
         className={classes.favoriteLink}
         onClick={() => {
@@ -26,12 +32,13 @@ export const FavoriteItem = ({ searchValue }) => {
         }}
         to={AppRoute.SEARCH}
       >
-        <p className={classes.favoriteItemText}>{value}</p>
+        <p className={classes.favoriteItemText}>{discription}</p>
       </Link>
       <div className={`${classes.favoriteBoxBtn} favorite-box-btn `}>
         <button
           className={`${classes.favoriteItemBtn} ${classes.favoriteItemBtnChange}`}
           type="button"
+          onClick={() => dispatch(ActionCreatorData.toggleModalEdit(false))}
         >
           Изменить
         </button>

@@ -8,7 +8,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { rootReducer } from './redux/rootRaducer';
 import { createAPI } from './youtube-api/api';
-// import { OperationUser } from './redux/user/userReducer.js';
 
 const init = () => {
   const api = createAPI();
@@ -19,8 +18,6 @@ const init = () => {
       applyMiddleware(thunk.withExtraArgument(api))
     )
   );
-
-  // store.dispatch(OperationUser.userAuthCheck());
 
   ReactDOM.render(
     <Provider store={store}>

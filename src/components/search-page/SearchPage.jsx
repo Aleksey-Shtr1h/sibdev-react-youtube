@@ -15,16 +15,16 @@ import { ActionCreatorData } from "../../redux/data/dataAction";
 import { useSearchPageStyles } from "./styleSearchPage";
 
 export const SearchPage = () => {
-  // const [inputValue, setInputValue] = React.useState("");
   const inputValue = useSelector((state) => getInputValueSelector(state));
   const videoYouTube = useSelector((state) => getVideoYouTubeSelector(state));
   const dispatch = useDispatch();
 
   const isVideo = videoYouTube === null ? false : true;
   const classes = useSearchPageStyles();
+  const COUNT_VIDEO = 12;
 
   const onClickSubmit = () => {
-    dispatch(OperationData.getVideoYouTube(inputValue));
+    dispatch(OperationData.getVideoYouTube(inputValue, COUNT_VIDEO));
   };
 
   const onClickChangeValue = (value) => {
